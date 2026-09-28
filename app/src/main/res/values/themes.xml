@@ -1,8 +1,12 @@
 <resources>
-    <style name="Theme.Pricely" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Pricely" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/accent_blue</item>
         <item name="colorPrimaryVariant">@color/primary_navy</item>
         <item name="colorOnPrimary">@color/card_bg</item>
         <item name="android:statusBarColor">@color/primary_navy</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:editTextColor">@color/text_primary</item>
+        <item name="android:windowBackground">@color/bg_light</item>
     </style>
 </resources>

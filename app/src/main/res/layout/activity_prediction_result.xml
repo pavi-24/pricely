@@ -10,134 +10,228 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="22dp">
 
+        <!-- Header -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="VALUATION REPORT"
+            android:textColor="@color/accent_blue"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.08"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/title_prediction_result"
             android:textColor="@color/text_primary"
-            android:textSize="24sp"
+            android:textSize="28sp"
             android:textStyle="bold"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="8dp" />
 
-        <!-- Price Result Card -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Here is the estimated market value of your property."
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Main Price Card -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
+            android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="#0F172A"
+            app:cardCornerRadius="24dp"
             app:cardElevation="4dp"
-            app:cardBackgroundColor="@color/card_bg"
-            app:strokeColor="@color/accent_blue"
-            app:strokeWidth="1.5dp"
-            android:layout_marginBottom="20dp">
+            app:strokeWidth="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:padding="24dp">
+                android:padding="28dp">
 
+                <!-- Success Label -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/notice_valuation_success_title"
-                    android:textColor="@color/accent_blue"
-                    android:textSize="16sp"
+                    android:textColor="#93C5FD"
+                    android:textSize="14sp"
                     android:textStyle="bold"
-                    android:layout_marginBottom="10dp" />
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp" />
+
+                <!-- Price Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ESTIMATED PROPERTY VALUE"
+                    android:textColor="#CBD5E1"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp" />
 
                 <!-- Main Formatted Price -->
                 <TextView
                     android:id="@+id/tvFormattedPrice"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="₹0.00 Lakhs"
-                    android:textColor="@color/text_primary"
-                    android:textSize="32sp"
+                    android:textColor="#FFFFFF"
+                    android:textSize="34sp"
                     android:textStyle="bold"
-                    android:layout_marginBottom="6dp" />
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp"
+                    android:breakStrategy="high_quality" />
 
-                <!-- Secondary Sub-price (Exact INR & Lakhs) -->
+                <!-- Exact Price -->
                 <TextView
                     android:id="@+id/tvSubPrice"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="INR 0 (0.00 Lakhs INR)"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="14sp" />
+                    android:textColor="#CBD5E1"
+                    android:textSize="13sp"
+                    android:gravity="center" />
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#334155"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="18dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AI-ASSISTED VALUATION"
+                    android:textColor="#93C5FD"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.06"
+                    android:gravity="center" />
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Summary Details Card -->
+        <!-- Property Summary Card -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="2dp"
+            android:layout_marginBottom="20dp"
             app:cardBackgroundColor="@color/card_bg"
-            android:layout_marginBottom="16dp">
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp"
+            app:strokeColor="#E8EDF5"
+            app:strokeWidth="1dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="22dp">
 
+                <!-- Summary Heading -->
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/section_summary_title"
                     android:textColor="@color/text_primary"
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
-                    android:layout_marginBottom="14dp" />
+                    android:layout_marginBottom="6dp" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Property details used for this valuation"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="20dp" />
+
+                <!-- Dynamic Summary -->
                 <TextView
                     android:id="@+id/tvSummaryDetails"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/text_secondary"
                     android:textSize="14sp"
-                    android:lineSpacingExtra="6dp" />
+                    android:lineSpacingExtra="8dp" />
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Disclaimer Banner Card -->
+        <!-- Disclaimer Card -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="1dp"
+            android:layout_marginBottom="24dp"
             app:cardBackgroundColor="@color/notice_amber_bg"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
             app:strokeColor="@color/notice_amber"
-            app:strokeWidth="1dp"
-            android:layout_marginBottom="24dp">
+            app:strokeWidth="1dp">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="14dp"
-                android:text="@string/notice_valuation_disclaimer"
-                android:textColor="#78350F"
-                android:textSize="12sp"
-                android:lineSpacingExtra="2dp" />
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="IMPORTANT INFORMATION"
+                    android:textColor="#92400E"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.04"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notice_valuation_disclaimer"
+                    android:textColor="#78350F"
+                    android:textSize="13sp"
+                    android:lineSpacingExtra="4dp" />
+
+            </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <!-- Return Home Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnBackHome"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="58dp"
             android:text="@string/btn_back_home"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:cornerRadius="12dp"
+            app:cornerRadius="14dp"
             app:backgroundTint="@color/accent_blue" />
+
+        <!-- Footer -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thank you for using Pricely."
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="12dp" />
 
     </LinearLayout>
 </ScrollView>

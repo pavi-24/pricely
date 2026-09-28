@@ -39,6 +39,30 @@ public class PredictionResultActivity extends AppCompatActivity {
 
             double priceLakhs = intent.getDoubleExtra("PREDICTED_PRICE_LAKHS", 0);
             double priceInr = intent.getDoubleExtra("PREDICTED_PRICE_INR", 0);
+            // Save prediction to SQLite only once when this screen is first created.
+if (savedInstanceState == null && priceInr > 0) {
+
+    String formattedPrice = intent.getStringExtra("FORMATTED_PRICE_INR");
+
+    ValuationItem item = new ValuationItem(
+            System.currentTimeMillis(),
+            location,
+            areaType,
+            availability,
+            totalSqft,
+            bhk,
+            bath,
+            balcony,
+            priceLakhs,
+            priceInr,
+            formattedPrice != null ? formattedPrice : ""
+    );
+
+    ValuationHistoryManager.saveValuation(
+            PredictionResultActivity.this,
+            item
+    );
+}
             String formattedInr = intent.getStringExtra("FORMATTED_PRICE_INR");
 
             // Format main price display

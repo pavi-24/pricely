@@ -31,7 +31,7 @@
     <string name="label_gated">Gated Community / Security</string>
     <string name="btn_submit_valuation">Predict Property Price</string>
     <string name="error_required_fields">Please fill in all required property details correctly.</string>
-    <string name="error_backend_unavailable">Unable to connect to ML prediction backend server (http://10.0.2.2:8000). Please check network or server status.</string>
+    <string name="error_backend_unavailable">Unable to connect to ML prediction backend server (https://pricely-house-price-api.onrender.com/). Please check network or server status.</string>
 
     <!-- Prediction Result Screen -->
     <string name="title_prediction_result">Valuation Result</string>

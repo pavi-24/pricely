@@ -3,148 +3,354 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_light"
+    android:background="#F8FAFC"
     android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="22dp">
 
-        <!-- App Branding Card -->
-        <com.google.android.material.card.MaterialCardView
+        <!-- Top branding -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="@color/primary_navy"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:layout_marginBottom="24dp">
 
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                app:cardBackgroundColor="#2563EB"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="P"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="28dp">
+                android:layout_marginStart="14dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/app_name"
-                    android:textColor="#FFFFFF"
-                    android:textSize="32sp"
+                    android:textColor="#0F172A"
+                    android:textSize="25sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginTop="2dp"
                     android:text="@string/app_tagline"
-                    android:textColor="#94A3B8"
-                    android:textSize="16sp" />
-
+                    android:textColor="#64748B"
+                    android:textSize="12sp" />
             </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
 
-        <!-- About App Card -->
+        <!-- Main hero card -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="2dp"
-            app:cardBackgroundColor="@color/card_bg"
-            android:layout_marginBottom="24dp">
+            android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="#0F172A"
+            app:cardCornerRadius="26dp"
+            app:cardElevation="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="24dp">
+                android:padding="26dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/home_welcome_title"
-                    android:textColor="@color/text_primary"
-                    android:textSize="18sp"
+                    android:background="#263B5C"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="7dp"
+                    android:text="SMART PROPERTY VALUATION"
+                    android:textColor="#BFDBFE"
+                    android:textSize="10sp"
                     android:textStyle="bold"
-                    android:layout_marginBottom="10dp" />
+                    android:letterSpacing="0.08" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/home_description"
-                    android:textColor="@color/text_secondary"
+                    android:layout_marginTop="22dp"
+                    android:text="Discover your property's estimated value."
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:lineSpacingExtra="3dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="24dp"
+                    android:text="Get an AI-powered house price estimate based on your property's location, size, and features."
+                    android:textColor="#CBD5E1"
                     android:textSize="14sp"
-                    android:lineSpacingExtra="4dp"
-                    android:layout_marginBottom="16dp" />
+                    android:lineSpacingExtra="5dp" />
 
-                <View
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPredictHousePrice"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/border_color"
-                    android:layout_marginBottom="16dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/home_feature_header"
-                    android:textColor="@color/text_primary"
+                    android:layout_height="58dp"
+                    android:text="@string/home_btn_predict"
+                    android:textColor="#FFFFFF"
                     android:textSize="15sp"
                     android:textStyle="bold"
-                    android:layout_marginBottom="8dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/home_feature_1"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="13sp"
-                    android:layout_marginBottom="4dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/home_feature_2"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="13sp"
-                    android:layout_marginBottom="4dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/home_feature_3"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="13sp" />
+                    app:backgroundTint="#2563EB"
+                    app:cornerRadius="16dp"
+                    app:icon="@android:drawable/ic_menu_search"
+                    app:iconTint="#FFFFFF"
+                    app:iconPadding="10dp" />
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Action Buttons -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnPredictHousePrice"
+        <!-- Section heading -->
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:text="@string/home_btn_predict"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:cornerRadius="14dp"
-            app:backgroundTint="@color/accent_blue"
-            android:layout_marginBottom="14dp" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:text="Your property, valued."
+            android:textColor="#0F172A"
+            android:textSize="21sp"
+            android:textStyle="bold" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:text="Everything you need for a quick property estimate."
+            android:textColor="#64748B"
+            android:textSize="13sp" />
+
+        <!-- Feature card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="22dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#E2E8F0"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Feature 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        app:cardBackgroundColor="#EFF6FF"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="₹"
+                            android:textColor="#2563EB"
+                            android:textSize="26sp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="AI-powered valuation"
+                            android:textColor="#0F172A"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Get an estimated price in Indian Rupees."
+                            android:textColor="#64748B"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="18dp"
+                    android:background="#E2E8F0" />
+
+                <!-- Feature 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        app:cardBackgroundColor="#F0FDF4"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="⌂"
+                            android:textColor="#15803D"
+                            android:textSize="28sp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Property-specific estimates"
+                            android:textColor="#0F172A"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Use location, area, BHK, and other details."
+                            android:textColor="#64748B"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="18dp"
+                    android:background="#E2E8F0" />
+
+                <!-- Feature 3 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        app:cardBackgroundColor="#F5F3FF"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="↻"
+                            android:textColor="#7C3AED"
+                            android:textSize="27sp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Saved valuation history"
+                            android:textColor="#0F172A"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Review your previous property estimates."
+                            android:textColor="#64748B"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- History action -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnValuationHistory"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
+            android:layout_height="58dp"
+            android:layout_marginBottom="18dp"
             android:text="@string/home_btn_history"
-            android:textColor="@color/primary_navy"
+            android:textColor="#0F172A"
             android:textSize="15sp"
             android:textStyle="bold"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            app:strokeColor="@color/border_color"
-            app:strokeWidth="1.5dp"
-            app:cornerRadius="14dp" />
+            app:backgroundTint="#FFFFFF"
+            app:cornerRadius="16dp"
+            app:strokeColor="#CBD5E1"
+            app:strokeWidth="1dp"
+            app:icon="@android:drawable/ic_menu_recent_history"
+            app:iconTint="#2563EB"
+            app:iconPadding="10dp" />
+
+        <!-- Footer -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:text="ESTIMATES ARE FOR INFORMATIONAL PURPOSES"
+            android:textColor="#94A3B8"
+            android:textSize="10sp"
+            android:letterSpacing="0.06" />
 
     </LinearLayout>
 </ScrollView>

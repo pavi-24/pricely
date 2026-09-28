@@ -12,7 +12,7 @@ public class RetrofitClient {
     public static final String PROD_BASE_URL = "https://pricely-house-price-api.onrender.com/";
 
     // Toggle flag: Set to true when switching to production cloud API endpoint
-    private static boolean USE_PRODUCTION = false;
+    private static boolean USE_PRODUCTION = true;
 
     private static String customBaseUrl = null;
     private static Retrofit retrofit = null;

@@ -4,31 +4,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_light"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:clipToPadding="false">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="22dp">
 
+        <!-- Header -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="PROPERTY VALUATION"
+            android:textColor="@color/accent_blue"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.08"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/title_property_details"
             android:textColor="@color/text_primary"
-            android:textSize="24sp"
+            android:textSize="28sp"
             android:textStyle="bold"
-            android:layout_marginBottom="16dp" />
+            android:lineSpacingExtra="3dp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter your property details to get an estimated market value."
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="24dp" />
 
         <!-- Form Card -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="2dp"
+            android:layout_marginBottom="20dp"
             app:cardBackgroundColor="@color/card_bg"
-            android:layout_marginBottom="20dp">
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp"
+            app:strokeColor="#E8EDF5"
+            app:strokeWidth="1dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -36,142 +60,281 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <!-- Locality EditText -->
+                <!-- Location Section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LOCATION &amp; PROPERTY"
+                    android:textColor="@color/accent_blue"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.05"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Locality -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilLocality"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/label_locality"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_marginBottom="16dp">
+                    android:textColorHint="@color/text_secondary"
+                    app:hintTextColor="@color/accent_blue"
+                    app:boxBackgroundColor="#FFFFFF"
+                    android:layout_marginBottom="16dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxStrokeColor="@color/accent_blue">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etLocality"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textCapWords" />
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary"
+                        android:inputType="textCapWords"
+                        android:singleLine="true" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Area Type Spinner -->
+                <!-- Area Type -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/label_area_type"
                     android:textColor="@color/text_primary"
+                    android:textSize="14sp"
                     android:textStyle="bold"
-                    android:layout_marginBottom="6dp"/>
+                    android:layout_marginBottom="8dp" />
 
                 <Spinner
                     android:id="@+id/spinnerAreaType"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@android:drawable/btn_dropdown"
-                    android:layout_marginBottom="16dp"/>
+                    android:layout_height="52dp"
+                    android:background="@drawable/spinner_background"
+                    android:spinnerMode="dropdown"
+                    android:layout_marginBottom="20dp" />
 
-                <!-- Availability Spinner -->
+                <!-- Availability -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/label_availability"
                     android:textColor="@color/text_primary"
+                    android:textSize="14sp"
                     android:textStyle="bold"
-                    android:layout_marginBottom="6dp"/>
+                    android:layout_marginBottom="8dp" />
 
                 <Spinner
                     android:id="@+id/spinnerAvailability"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@android:drawable/btn_dropdown"
-                    android:layout_marginBottom="16dp"/>
+                    android:layout_height="52dp"
+                    android:background="@drawable/spinner_background"
+                    android:spinnerMode="dropdown"
+                    android:layout_marginBottom="24dp" />
 
-                <!-- Built-up Area EditText -->
+                <!-- Area Section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PROPERTY SIZE"
+                    android:textColor="@color/accent_blue"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.05"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Built-up Area -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilArea"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/label_area"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_marginBottom="16dp">
+                    android:textColorHint="@color/text_secondary"
+                    app:hintTextColor="@color/accent_blue"
+                    app:boxBackgroundColor="#FFFFFF"
+                    android:layout_marginBottom="16dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxStrokeColor="@color/accent_blue">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etArea"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary"
                         android:inputType="numberDecimal" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- BHK EditText -->
+                <!-- Configuration Section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ROOM CONFIGURATION"
+                    android:textColor="@color/accent_blue"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.05"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- BHK -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilBhk"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/label_bhk"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_marginBottom="16dp">
+                    android:textColorHint="@color/text_secondary"
+                    app:hintTextColor="@color/accent_blue"
+                    app:boxBackgroundColor="#FFFFFF"
+                    android:layout_marginBottom="16dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxStrokeColor="@color/accent_blue">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etBhk"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary"
                         android:inputType="number" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Bathrooms EditText -->
+                <!-- Bathrooms -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilBathrooms"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/label_bathrooms"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_marginBottom="16dp">
+                    android:textColorHint="@color/text_secondary"
+                    app:hintTextColor="@color/accent_blue"
+                    app:boxBackgroundColor="#FFFFFF"
+                    android:layout_marginBottom="16dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxStrokeColor="@color/accent_blue">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etBathrooms"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary"
                         android:inputType="number" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Balconies EditText -->
+                <!-- Balconies -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilBalcony"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/label_balcony"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_marginBottom="16dp">
+                    android:textColorHint="@color/text_secondary"
+                    app:hintTextColor="@color/accent_blue"
+                    app:boxBackgroundColor="#FFFFFF"
+                    android:layout_marginBottom="4dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxStrokeColor="@color/accent_blue">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etBalcony"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary"
                         android:inputType="number" />
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Loading Indicator -->
-        <ProgressBar
-            android:id="@+id/progressBarLoading"
-            android:layout_width="wrap_content"
+        <!-- Loading Indicator Container -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/layoutLoadingContainer"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
             android:visibility="gone"
-            android:layout_marginBottom="16dp" />
+            app:cardBackgroundColor="#EFF6FF"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#BFDBFE"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="20dp">
+
+                <ProgressBar
+                    android:id="@+id/progressBarLoading"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:indeterminateTint="@color/accent_blue"
+                    android:layout_marginBottom="10dp" />
+
+                <TextView
+                    android:id="@+id/tvLoadingMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calculating your property value..."
+                    android:textColor="@color/accent_blue"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Connecting to ML prediction engine on Render..."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- Submit Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSubmitValuation"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="58dp"
             android:text="@string/btn_submit_valuation"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:cornerRadius="12dp"
+            app:cornerRadius="14dp"
             app:backgroundTint="@color/accent_blue"
             android:layout_marginBottom="16dp" />
+
+        <!-- Footer -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your property details are used to generate an estimated valuation."
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:lineSpacingExtra="3dp"
+            android:layout_marginBottom="12dp" />
 
     </LinearLayout>
 </ScrollView>

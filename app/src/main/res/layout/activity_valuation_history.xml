@@ -3,20 +3,40 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_light"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:background="@color/bg_light"
+    android:padding="22dp">
 
+    <!-- Header -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="YOUR PROPERTY RECORDS"
+        android:textColor="@color/accent_blue"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.08"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/title_valuation_history"
         android:textColor="@color/text_primary"
-        android:textSize="24sp"
+        android:textSize="28sp"
         android:textStyle="bold"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="8dp" />
 
-    <!-- Empty History Card View -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View your previously saved property valuations in one place."
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp"
+        android:lineSpacingExtra="4dp"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Empty History State -->
     <LinearLayout
         android:id="@+id/layoutEmptyState"
         android:layout_width="match_parent"
@@ -24,44 +44,58 @@
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="16dp"
+        android:padding="4dp"
         android:visibility="gone">
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="20dp"
+            app:cardCornerRadius="24dp"
             app:cardElevation="2dp"
-            app:cardBackgroundColor="@color/card_bg">
+            app:cardBackgroundColor="@color/card_bg"
+            app:strokeColor="#E8EDF5"
+            app:strokeWidth="1dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:orientation="vertical"
+                android:gravity="center"
                 android:padding="32dp">
 
+                <!-- Empty State Icon -->
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
+                    android:gravity="center"
+                    android:text="₹"
+                    android:textColor="@color/accent_blue"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:background="#EFF6FF"
+                    android:layout_marginBottom="24dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/empty_history_title"
                     android:textColor="@color/text_primary"
                     android:textSize="20sp"
                     android:textStyle="bold"
+                    android:gravity="center"
                     android:layout_marginBottom="12dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/empty_history_subtitle"
                     android:textColor="@color/text_secondary"
                     android:textSize="14sp"
                     android:gravity="center"
-                    android:lineSpacingExtra="4dp" />
+                    android:lineSpacingExtra="5dp" />
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
-
     </LinearLayout>
 
     <!-- History RecyclerView -->
@@ -71,18 +105,20 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:clipToPadding="false"
-        android:paddingBottom="12dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="16dp"
         android:visibility="visible" />
 
+    <!-- Back to Home Button -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnHistoryBackHome"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="match_parent"
-        android:layout_height="54dp"
+        android:layout_height="58dp"
         android:text="@string/btn_back_home"
         android:textColor="@color/primary_navy"
         android:textSize="15sp"
         android:textStyle="bold"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         app:strokeColor="@color/border_color"
         app:strokeWidth="1.5dp"
         app:cornerRadius="14dp" />
