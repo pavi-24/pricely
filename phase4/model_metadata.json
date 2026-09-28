@@ -1,0 +1,78 @@
+{
+    "project": "Pricely - Smart House Price Prediction",
+    "phase": 4,
+    "model_type": "Gradient Boosting",
+    "random_seed": 42,
+    "dataset_path": "D:\\HousePricePrediction\\data\\cleaned_house_prices.csv",
+    "dataset_rows": 11802,
+    "train_rows": 9441,
+    "test_rows": 2361,
+    "target_column": "price",
+    "target_unit": "Lakhs INR",
+    "feature_columns": [
+        "location",
+        "area_type",
+        "availability",
+        "total_sqft_num",
+        "bhk",
+        "bath",
+        "balcony"
+    ],
+    "evaluation_metrics": {
+        "Model": "Gradient Boosting",
+        "CV_R2_Mean": 0.77196,
+        "CV_R2_Std": 0.0194,
+        "CV_MAE_Mean": 20.672621,
+        "CV_RMSE_Mean": 44.73356,
+        "Test_MAE": 20.252654,
+        "Test_RMSE": 39.373405,
+        "Test_R2": 0.805561
+    },
+    "all_candidate_metrics": [
+        {
+            "Model": "Linear Regression",
+            "CV_R2_Mean": 0.697641,
+            "CV_MAE_Mean": 26.495204,
+            "CV_RMSE_Mean": 51.522222,
+            "Test_MAE": 25.798155,
+            "Test_RMSE": 45.4526,
+            "Test_R2": 0.740974
+        },
+        {
+            "Model": "Ridge Regression",
+            "CV_R2_Mean": 0.697775,
+            "CV_MAE_Mean": 26.467475,
+            "CV_RMSE_Mean": 51.503463,
+            "Test_MAE": 25.786524,
+            "Test_RMSE": 45.449767,
+            "Test_R2": 0.741006
+        },
+        {
+            "Model": "Decision Tree",
+            "CV_R2_Mean": 0.669894,
+            "CV_MAE_Mean": 23.515286,
+            "CV_RMSE_Mean": 53.79155,
+            "Test_MAE": 23.364955,
+            "Test_RMSE": 47.458694,
+            "Test_R2": 0.717651
+        },
+        {
+            "Model": "Random Forest",
+            "CV_R2_Mean": 0.738096,
+            "CV_MAE_Mean": 20.932997,
+            "CV_RMSE_Mean": 47.936636,
+            "Test_MAE": 20.575971,
+            "Test_RMSE": 43.324208,
+            "Test_R2": 0.764663
+        },
+        {
+            "Model": "Gradient Boosting",
+            "CV_R2_Mean": 0.77196,
+            "CV_MAE_Mean": 20.672621,
+            "CV_RMSE_Mean": 44.73356,
+            "Test_MAE": 20.252654,
+            "Test_RMSE": 39.373405,
+            "Test_R2": 0.805561
+        }
+    ]
+}

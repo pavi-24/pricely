@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Pricely</string>
+    <string name="app_tagline">Smart House Price Prediction</string>
+
+    <!-- Home Screen -->
+    <string name="home_welcome_title">Welcome to Pricely</string>
+    <string name="home_description">Pricely is an intelligent property valuation platform designed for Indian real estate markets. Get data-driven property price estimates based on location, area, BHK, and amenities.</string>
+    <string name="home_btn_predict">Predict House Price</string>
+    <string name="home_btn_history">Valuation History</string>
+    <string name="home_feature_header">Key Capabilities</string>
+    <string name="home_feature_1">• Multi-City Coverage across major metro hubs</string>
+    <string name="home_feature_2">• Detailed property attribute customization</string>
+    <string name="home_feature_3">• Instant valuation parameter summary</string>
+
+    <!-- Property Details Screen -->
+    <string name="title_property_details">Property Details</string>
+    <string name="label_city">Select City *</string>
+    <string name="label_locality">Locality / Area Name *</string>
+    <string name="label_area_type">Area Layout Type *</string>
+    <string name="label_availability">Possession Availability *</string>
+    <string name="label_area">Built-up Area (sq. ft.) *</string>
+    <string name="label_bhk">BHK Configuration *</string>
+    <string name="label_bathrooms">Number of Bathrooms *</string>
+    <string name="label_balcony">Number of Balconies *</string>
+    <string name="label_property_type">Property Type *</string>
+    <string name="label_age">Property Age *</string>
+    <string name="label_furnishing">Furnishing Status *</string>
+    <string name="label_amenities">Amenities &amp; Features</string>
+    <string name="label_parking">Parking Space Available</string>
+    <string name="label_lift">Lift / Elevator Facility</string>
+    <string name="label_gated">Gated Community / Security</string>
+    <string name="btn_submit_valuation">Predict Property Price</string>
+    <string name="error_required_fields">Please fill in all required property details correctly.</string>
+    <string name="error_backend_unavailable">Unable to connect to ML prediction backend server (http://10.0.2.2:8000). Please check network or server status.</string>
+
+    <!-- Prediction Result Screen -->
+    <string name="title_prediction_result">Valuation Result</string>
+    <string name="notice_valuation_success_title">Estimated Market Valuation</string>
+    <string name="notice_valuation_disclaimer">Disclaimer: This estimate is produced by a trained Gradient Boosting ML model based on Bengaluru property listing data. Actual market value may vary based on site inspections.</string>
+    <string name="section_summary_title">Evaluated Property Parameters</string>
+    <string name="btn_back_home">Return to Home Screen</string>
+
+    <!-- Valuation History Screen -->
+    <string name="title_valuation_history">Valuation History</string>
+    <string name="empty_history_title">No predictions yet.</string>
+    <string name="empty_history_subtitle">You haven\'t evaluated any properties yet. Perform a new property prediction to view your valuation logs here.</string>
+</resources>
